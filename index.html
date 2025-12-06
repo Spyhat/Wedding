@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>王梓 & 汪秋益 · 婚礼邀请函</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "PingFang SC", "Microsoft YaHei", serif;
+        background: #fdfbf7;
+        color: #3a2f2f;
+        overflow-x: hidden;
+    }
+
+    /* 水墨背景（柔动动画） */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('ink-bg.jpg'); /* 未来换成 base64 */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        opacity: 0.22;
+        z-index: -1;
+        animation: floating 18s ease-in-out infinite alternate;
+    }
+    @keyframes floating {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.06); }
+    }
+
+    /* 卷轴样式 */
+    .scroll-wrapper {
+        width: 92%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.78);
+        padding: 40px 25px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        margin-top: 35px;
+        margin-bottom: 35px;
+        backdrop-filter: blur(8px);
+    }
+
+    .title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #6a4b32;
+        letter-spacing: 3px;
+        font-family: "Songti SC", serif;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+        color: #8a7667;
+        margin-bottom: 15px;
+        font-family: "Songti SC", serif;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        margin: 25px 0 15px 0;
+        font-weight: bold;
+        color: #6d4328;
+        font-family: "Songti SC", serif;
+        border-left: 4px solid #c7a27c;
+        padding-left: 10px;
+    }
+
+    /* 图片 */
+    .photo {
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 15px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    }
+
+    .caption {
+        margin-top: 8px;
+        text-align: center;
+        color: #5e4b3c;
+        font-size: 1rem;
+        font-family: "Songti SC", serif;
+        line-height: 1.6;
+    }
+
+    /* 音乐按钮（旋转） */
+    .music-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.85);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .rotate {
+        animation: spin 4s linear infinite;
+    }
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .map-box {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #c8b5a6;
+        border-radius: 10px;
+        background: #fff7ef;
+    }
+
+    .copy-btn {
+        margin-top: 8px;
+        background: #b08a63;
+        color: white;
+        padding: 6px 14px;
+        border: none;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- 背景音乐 -->
+<div id="musicBtn" class="music-btn rotate">♪</div>
+<audio id="bgm" src="music.mp3" autoplay loop preload="auto" playsinline></audio>
+
+<!-- 首页 -->
+<div class="scroll-wrapper">
+    <div class="title">王 梓 & 汪 秋 益</div>
+    <div class="subtitle">诚挚邀请您参加我们的婚礼</div>
+    <div class="subtitle">2025年12月27日（农历：腊月初七）</div>
+    <div class="subtitle">恭候时间：下午 5:30</div>
+</div>
+
+<!-- 缘起 -->
+<div class="scroll-wrapper">
+    <div class="section-title">缘起</div>
+    <p class="caption">
+        前世漫漫风尘路，今生人海再相逢。  
+        两颗心在时光的缝隙里再次重逢，像是命运书页上早已写下的一笔。
+    </p>
+</div>
+
+<!-- 今生 -->
+<div class="scroll-wrapper">
+    <div class="section-title">今生</div>
+</div>
+
+<!-- 十张照片 -->
+<div class="scroll-wrapper">
+    <div class="section-title">我们的故事</div>
+
+    <img src="img/p1.jpg" class="photo" />
+    <div class="caption">① 若前世真有渡口，那么我们一定在那儿失散过一次。</div>
+
+    <img src="img/p2.jpg" class="photo" />
+    <div class="caption">② 你一回头，便把千年的风都带暖了。</div>
+
+    <img src="img/p3.jpg" class="photo" />
+    <div class="caption">③ 缘分不是找到谁，而是无论前世今生，总能再遇见你。</div>
+
+    <img src="img/p4.jpg" class="photo" />
+    <div class="caption">④ 山河远阔，人间烟火。不及你眉眼半分。</div>
+
+    <img src="img/p5.jpg" class="photo" />
+    <div class="caption">⑤ 那天阳光很好，我们刚好相爱。</div>
+
+    <img src="img/p6.jpg" class="photo" />
+    <div class="caption">⑥ 跨越时空的拥抱，也敌不过你一句“到我身边来”。</div>
+
+    <img src="img/p7.jpg" class="photo" />
+    <div class="caption">⑦ 爱是风，吹散前尘；爱是雨，落在今生。</div>
+
+    <img src="img/p8.jpg" class="photo" />
+    <div class="caption">⑧ 如果命运有纹路，你是我最浓的一笔。</div>
+
+    <img src="img/p9.jpg" class="photo" />
+    <div class="caption">⑨ 从古装的时空到现代的婚纱，我们追上了彼此。</div>
+
+    <img src="img/p10.jpg" class="photo" />
+    <div class="caption">⑩ 愿此一生，春秋与共，风雨同渡。</div>
+</div>
+
+<!-- 誓词 -->
+<div class="scroll-wrapper">
+    <div class="section-title">誓词</div>
+    <p class="caption">
+        在往后的日子里，我们将彼此守望、彼此成全。  
+        不问风雨几度，不问岁月几重。  
+        愿以后的故事里，我们都在。
+    </p>
+</div>
+
+<!-- 地图 -->
+<div class="scroll-wrapper">
+    <div class="section-title">婚礼地点</div>
+
+    <div class="caption">珠海湾壹号·粤菜(一线海景城市阳台店)</div>
+    <div class="caption">广东省珠海市香洲区情侣中路73号 城市阳台一楼111–112、208–209号</div>
+
+    <button class="copy-btn" onclick="copyAddress()">复制地址</button>
+
+    <div class="map-box">
+        <a href="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜"
+            style="color:#6a4b32; font-size:1.1rem;" target="_blank">
+            👉 点击一键使用高德地图导航
+        </a>
+    </div>
+</div>
+
+<!-- 倒计时 -->
+<div class="scroll-wrapper">
+    <div class="section-title">距离典礼开始</div>
+    <div class="subtitle" id="countdown">计算中...</div>
+</div>
+
+<!-- 宾客祝福 -->
+<div class="scroll-wrapper">
+    <div class="section-title">宾客祝福</div>
+    <p class="caption">感谢您的到来，是我们婚礼最温柔的注脚。</p>
+</div>
+
+<script>
+/* 音乐播放控制 */
+const musicBtn = document.getElementById("musicBtn");
+const bgm = document.getElementById("bgm");
+
+musicBtn.onclick = function () {
+    if (bgm.paused) {
+        bgm.play();
+        musicBtn.classList.add("rotate");
+    } else {
+        bgm.pause();
+        musicBtn.classList.remove("rotate");
+    }
+};
+
+document.body.addEventListener('touchstart', () => bgm.play(), { once: true });
+
+/* 倒计时 */
+function updateCountdown() {
+    const target = new Date('2025-12-27T17:30:00+08:00');
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+        document.getElementById('countdown').innerText = "典礼已经开始！";
+        return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor(diff / (1000 * 60 * 60) % 24);
+    const m = Math.floor(diff / (1000 * 60) % 60);
+    const s = Math.floor(diff / 1000 % 60);
+
+    document.getElementById('countdown').innerText = `${d}天 ${h}小时 ${m}分 ${s}秒`;
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+/* 复制地址 */
+function copyAddress() {
+    const text = "珠海湾壹号·粤菜 城市阳台店\n广东省珠海市香洲区情侣中路73号";
+    navigator.clipboard.writeText(text);
+    alert("地址已复制");
+}
+</script>
+
+</body>
+</html>
