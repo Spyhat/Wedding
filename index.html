@@ -4,74 +4,262 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>王梓 & 汪秋益 · 婚礼邀请函</title>
+
 <style>
+/* -------------------------------------------------------
+   全局风格：象牙白 · 金箔 · 高端柔光玻璃卡
+-------------------------------------------------------- */
+:root{
+  --ivory: #faf7f2;
+  --gold: #c9a066;
+  --gold-light: #e4c9a1;
+  --text-dark: #3a2f2f;
+
+  --wrap-width: 92%;
+  --wrap-bg: rgba(255,255,255,0.82);
+
+  --card-blur: blur(12px) brightness(1.12);
+}
+
+html,body{height:100%}
 body {
-    margin:0; padding:0; font-family:"PingFang SC","Microsoft YaHei",serif;
-    background:#fff0e0; color:#3a2f2f; overflow-x:hidden; font-size:1rem; position:relative;
+    margin:0; padding:0;
+    font-family:"Songti SC","PingFang SC","Microsoft YaHei",serif;
+    background: var(--ivory);
+    color:var(--text-dark);
+    overflow-x:hidden; font-size:1rem;
+    -webkit-font-smoothing:antialiased;
 }
+
+/* -------------------------------------------------------
+   背景丝绒纹理（顶级婚礼纸张质感）
+-------------------------------------------------------- */
 body::before {
-    content:""; position:fixed; top:0; left:0; width:100%; height:100%;
-    background-image:url('https://i.imgur.com/YOUR_INKBK.jpg'); background-size:cover;
-    background-attachment:fixed; background-position:center; opacity:0.22; z-index:-1;
-    animation:floating 18s ease-in-out infinite alternate;
+    content:"";
+    position:fixed; inset:0;
+    background-image: url('design/background_luxury.jpg'); /* 推荐使用淡象牙纸纹理 */
+    background-size:cover; background-position:center;
+    opacity:0.30;
+    z-index:-3;
+    filter:blur(1.6px);
+    animation:floatBg 22s ease-in-out infinite alternate;
 }
+
+@keyframes floatBg {
+  0% { transform:scale(1.03) translateY(0); }
+  100%{ transform:scale(1.06) translateY(-20px); }
+}
+
+/* -------------------------------------------------------
+   金粉粒子层（模拟实体金箔微光）
+-------------------------------------------------------- */
+body::after{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    background-image:url('design/gold_dust.png'); /* 建议半透明微粒图 */
+    background-size:cover;
+    opacity:0.22;
+    mix-blend-mode:lighten;
+    z-index:-2;
+}
+
+/* -------------------------------------------------------
+   飘落花瓣（更柔、随机速度）
+-------------------------------------------------------- */
 .falling-petals {
-    position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:998;
-    background:url('https://i.gifer.com/origin/92/928e5d35abbb8bbd0d3f1f5c7a1a2f4a.gif') repeat top center;
-    background-size:contain; animation:fall 15s linear infinite;
+    position:fixed; inset:0;
+    pointer-events:none; z-index:998;
+    background: url('design/flowerdown.gif') repeat-x top center;
+    background-size: contain;
+    opacity:0.88;
+    animation: petalsFall 14s linear infinite;
 }
-@keyframes floating {0% {transform:scale(1);} 100% {transform:scale(1.06);}}
-@keyframes fall {0%{background-position:0 -100px;}100%{background-position:0 1000px;}}
 
+@keyframes petalsFall {
+    0% { background-position: 0 -180px; }
+    100%{ background-position: 0 1250px; }
+}
+
+/* -------------------------------------------------------
+   内容卡片：厚玻璃效果 + 柔光边
+-------------------------------------------------------- */
 .scroll-wrapper {
-    width:92%; margin:35px auto; padding:40px 25px; background:rgba(255,255,255,0.88);
-    border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.12); backdrop-filter:blur(8px);
+    width:var(--wrap-width);
+    margin:35px auto;
+    padding:45px 28px;
+
+    background:var(--wrap-bg);
+    backdrop-filter:var(--card-blur);
+
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.55);
+
+    box-shadow:
+      0 8px 28px rgba(0,0,0,0.12),
+      inset 0 0 45px rgba(255,255,255,0.28);
 }
 
-.title { font-size:3rem; text-align:center; margin-bottom:20px; color:#a94442; letter-spacing:3px; font-family:"Songti SC",serif;}
-.subtitle { font-size:1.8rem; text-align:center; color:#b36c4a; margin-bottom:15px; font-family:"Songti SC",serif;}
-.section-title { font-size:2.4rem; margin:38px 0 22px 0; font-weight:bold; color:#8a3e2f; font-family:"Songti SC",serif; border-left:6px solid #e6a27c; padding-left:15px;}
+/* -------------------------------------------------------
+   文字（高端婚礼排版）
+-------------------------------------------------------- */
+.title {
+  font-size:3rem; text-align:center; margin:18px 0;
+  color:var(--gold);
+  letter-spacing:4px;
+  font-family:"Songti SC",serif;
+  background:linear-gradient(to right, var(--gold-light), var(--gold), #d6b585);
+  background-clip: text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-.photo { width:100%; border-radius:10px; box-shadow:0 6px 12px rgba(0,0,0,0.18); margin-top:20px; }
-.caption { margin-top:12px; text-align:center; color:#5e4b3c; font-size:1.5rem; font-family:"Songti SC",serif; line-height:2.4rem;}
+.subtitle {
+    font-size:1.45rem;
+    text-align:center;
+    color:#a8835f;
+    margin-bottom:14px;
+    font-family:"Songti SC",serif;
+}
 
+.section-title {
+    font-size:2.1rem;
+    margin:32px 0 18px 0;
+    font-weight:700;
+    font-family:"Songti SC",serif;
+    color:#8a3e2f;
+    border-left:5px solid var(--gold-light);
+    padding-left:12px;
+}
+
+/* -------------------------------------------------------
+   照片（升级成高端光晕阴影）
+-------------------------------------------------------- */
+.photo {
+    width:100%;
+    border-radius:14px;
+    margin-top:20px;
+    display:block;
+
+    box-shadow:
+      0 10px 22px rgba(0,0,0,0.16),
+      0 0 18px rgba(235,205,165,0.35);
+
+    opacity:0;
+    transform:translateY(14px);
+    animation:fadeUp .8s forwards ease-out;
+}
+
+@keyframes fadeUp {
+    to { opacity:1; transform:none; }
+}
+
+.caption {
+    margin-top:14px;
+    text-align:center;
+    color:#624d3b;
+    font-size:1.38rem;
+    font-family:"Songti SC",serif;
+    line-height:2rem;
+}
+
+/* -------------------------------------------------------
+   分割 GIF（精致化）
+-------------------------------------------------------- */
+.divider-gif {
+    width:100%; height:78px;
+    background:url('design/dogs.gif') center/contain no-repeat;
+    margin:28px 0;
+    opacity:0.92;
+}
+
+/* -------------------------------------------------------
+   顶部开场 GIF（柔光）
+-------------------------------------------------------- */
+.intro-gif {
+    display:flex; justify-content:center; margin-top:18px;
+}
+.intro-gif img {
+    max-width:58%;
+    border-radius:16px;
+    box-shadow:
+      0 12px 32px rgba(0,0,0,0.18),
+      0 0 20px rgba(235,205,165,0.38);
+}
+
+/* -------------------------------------------------------
+   音乐按钮
+-------------------------------------------------------- */
 .music-btn {
-    position:fixed; top:20px; right:20px; width:75px; height:75px; background:rgba(255,255,255,0.85);
-    border-radius:50%; box-shadow:0 0 10px rgba(0,0,0,0.25); display:flex; justify-content:center; align-items:center;
-    z-index:999; font-size:30px; cursor:pointer;
+    position:fixed; top:18px; right:18px;
+    width:72px; height:72px;
+    background:rgba(255,255,255,0.92);
+    border-radius:50%;
+    box-shadow:0 6px 16px rgba(0,0,0,0.14);
+    display:flex; justify-content:center; align-items:center;
+    z-index:999; font-size:28px;
+    cursor:pointer;
 }
 .rotate { animation:spin 4s linear infinite; }
-@keyframes spin {from {transform:rotate(0deg);} to {transform:rotate(360deg);}}
+@keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
 
-.map-box { width:100%; padding:22px; border:1px solid #c8b5a6; border-radius:10px; background:#fff7ef; font-size:1.5rem; margin-top:10px;}
-.copy-btn { margin-top:12px; background:#b08a63; color:white; padding:10px 20px; border:none; border-radius:6px; font-size:1.35rem; cursor:pointer; }
+/* -------------------------------------------------------
+   地图区域
+-------------------------------------------------------- */
+.map-box {
+    width:100%; padding:20px;
+    border:1px solid #d9c5b3;
+    border-radius:12px;
+    background:#fffaf3;
+    font-size:1.05rem;
+    margin-top:14px;
+}
 
-.divider-gif { width:100%; height:80px; background:url('https://i.gifer.com/7PL6.gif') center/contain no-repeat; margin:35px 0; }
+/* 响应 */
+@media (max-width:720px){
+  .title{font-size:2.3rem}
+  .subtitle{font-size:1.15rem}
+  .section-title{font-size:1.65rem}
+  .caption{font-size:1.18rem; line-height:1.72rem}
+  .intro-gif img{max-width:85%}
+  .divider-gif{height:54px}
+}
 
 </style>
 </head>
-<body>
-<div class="falling-petals"></div>
-<div id="musicBtn" class="music-btn rotate">♪</div>
-<audio id="bgm" src="music.mp3" autoplay loop preload="auto" playsinline style="display:none;"></audio>
 
-<!-- 首页 + 第一张照片 -->
-<div class="scroll-wrapper">
-    <img src="pic_small/Fig1.jpg" class="photo" />
-    <div class="caption">若前世真有渡口，我们曾错过彼此，今生再不分离。</div>
-    <div style="margin-top:25px;"></div>
-    <div class="title">王 梓 & 汪 秋 益</div>
+
+<body>
+
+<!-- 飘落花瓣 -->
+<div class="falling-petals"></div>
+
+<!-- 音乐控制 -->
+<div id="musicBtn" class="music-btn rotate">♪</div>
+<audio id="bgm" src="music.mp3" loop preload="auto" playsinline style="display:none;"></audio>
+
+<!-- ========== 开场段落 ========== -->
+<div class="scroll-wrapper" style="text-align:center; padding:30px 25px;">
+    <div class="intro-gif">
+        <img src="design/marry.gif" alt="婚礼开场" />
+    </div>
+
+    <div style="height:22px"></div>
+
+    <div class="title">王 梓 &amp; 汪 秋 益</div>
     <div class="subtitle">诚挚邀请您参加我们的婚礼</div>
-    <div class="subtitle">2025年12月27日（农历：腊月初七）</div>
-    <div class="subtitle">恭候时间：下午 5:30</div>   
+    <div class="subtitle">2025年12月27日（农历：腊月初七）　恭候时间：下午 5:30</div>
+
+    <img src="pic_small/Fig1.jpg" class="photo" alt="第一张照片" />
+    <div class="caption">若前世真有渡口，我们曾错过彼此，今生再不分离。</div>
 </div>
 
 <div class="divider-gif"></div>
 
 <!-- 缘起 -->
 <div class="scroll-wrapper">
-    <div class="section-title">缘起</div>
-    <p class="caption">前世漫漫风尘路，今生人海再相逢。两颗心在岁月缝隙里再次交汇，如命运早已书写的章节。</p>
+  <div class="section-title">缘起</div>
+  <p class="caption">前世漫漫风尘路，今生人海再相逢。两颗心在岁月缝隙里再次交汇，如命运早已书写的章节。</p>
 </div>
 
 <div class="divider-gif"></div>
@@ -79,42 +267,17 @@ body::before {
 <!-- 我们的故事 -->
 <div class="scroll-wrapper">
     <div class="section-title">我们的故事</div>
-    <div>
-        <img src="pic_small/Fig2.jpg" class="photo"/>
-        <div class="caption">你一回头，便把千年的风都带暖了。</div>
-    </div>
-    <div>
-        <img src="pic_small/Fig3.jpg" class="photo"/>
-        <div class="caption">缘分不是找到谁，而是无论前世今生，总能再次遇见你。</div>
-    </div>
-    <div>
-        <img src="pic_small/Fig4.jpg" class="photo"/>
-        <div class="caption">山河远阔，人间烟火，不及你眉眼半分。</div>
-    </div>
-    <div>
-        <img src="pic_small/Fig5.jpg" class="photo"/>
-        <div class="caption">那天阳光正好，我们刚好相爱。</div>
-    </div>
-    <div>
-        <img src="pic_small/Fig6.jpg" class="photo"/>
-        <div class="caption">跨越时空的拥抱，也敌不过你一句“到我身边来”。</div>
-    </div>
-    <div>
-        <img src="pic_small/Fig7.jpg" class="photo"/>
-        <div class="caption">爱是风，吹散前尘；爱是雨，落在今生。</div>
-    </div>
-    <div>
-        <img src="pic_small/Fig8.jpg" class="photo"/>
-        <div class="caption">若命运有纹路，你便是我最浓的一笔。</div>
-    </div>
-    <div>
-        <img src="pic_small/Fig9.jpg" class="photo"/>
-        <div class="caption">从古装的时空到现代的婚纱，我们终于追上了彼此。</div>
-    </div>
-    <div>
-        <img src="pic_small/Fig10.jpg" class="photo"/>
-        <div class="caption">愿此一生，春秋与共，风雨同渡。</div>
-    </div>
+
+    <!-- 依序展示照片 -->
+    <div><img src="pic_small/Fig2.jpg" class="photo"><div class="caption">你一回头，便把千年的风都带暖了。</div></div>
+    <div><img src="pic_small/Fig3.jpg" class="photo"><div class="caption">缘分不是找到谁，而是无论前世今生，总能再次遇见你。</div></div>
+    <div><img src="pic_small/Fig4.jpg" class="photo"><div class="caption">山河远阔，人间烟火，不及你眉眼半分。</div></div>
+    <div><img src="pic_small/Fig5.jpg" class="photo"><div class="caption">那天阳光正好，我们刚好相爱。</div></div>
+    <div><img src="pic_small/Fig6.jpg" class="photo"><div class="caption">跨越时空的拥抱，也敌不过你一句“到我身边来”。</div></div>
+    <div><img src="pic_small/Fig7.jpg" class="photo"><div class="caption">爱是风，吹散前尘；爱是雨，落在今生。</div></div>
+    <div><img src="pic_small/Fig8.jpg" class="photo"><div class="caption">若命运有纹路，你便是我最浓的一笔。</div></div>
+    <div><img src="pic_small/Fig9.jpg" class="photo"><div class="caption">从古装的时空到现代的婚纱，我们终于追上了彼此。</div></div>
+    <div><img src="pic_small/Fig10.jpg" class="photo"><div class="caption">愿此一生，春秋与共，风雨同渡。</div></div>
 </div>
 
 <div class="divider-gif"></div>
@@ -128,38 +291,56 @@ body::before {
 <!-- 地图 -->
 <div class="scroll-wrapper">
     <div class="section-title">婚礼地点</div>
-    <div class="caption">珠海湾壹号·粤菜(一线海景城市阳台店)</div>
+    <div class="caption">珠海湾壹号·粤菜（海景城市阳台店）</div>
     <div class="caption">广东省珠海市香洲区情侣中路73号 城市阳台一楼111–112、208–209号</div>
-    <button class="copy-btn" onclick="copyAddress()">复制地址</button>
+
+    <button onclick="copyAddress()" style="margin-top:10px;">复制地址</button>
+
     <div class="map-box">
-        <a href="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜" style="color:#6a4b32; font-size:1.65rem;" target="_blank">👉 点击一键使用高德地图导航</a>
-        <iframe src="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜&src=web" width="100%" height="400" frameborder="0" style="border:0; border-radius:10px; margin-top:10px;" allowfullscreen tabindex="-1" scrolling="no"></iframe>
+        <a href="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜"
+           style="color:#6a4b32;" target="_blank">👉 点击一键使用高德地图导航</a>
+        <iframe src="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜&src=web"
+                width="100%" height="360" frameborder="0"
+                style="border:0; border-radius:10px; margin-top:10px;" allowfullscreen></iframe>
     </div>
 </div>
 
-<script>
-window.onload=function(){window.scrollTo(0,0);}
-const musicBtn=document.getElementById("musicBtn");
-const bgm=document.getElementById("bgm");
-musicBtn.onclick=function(){ if(bgm.paused){ bgm.play(); musicBtn.classList.add("rotate"); } else { bgm.pause(); musicBtn.classList.remove("rotate"); } };
-document.body.addEventListener('touchstart',()=>bgm.play(),{once:true});
-document.body.addEventListener('click',()=>bgm.play(),{once:true});
 
+<script>
+/* 自动回到顶部 */
+window.onload = ()=>{ window.scrollTo(0,0); };
+
+/* 音乐控制 */
+const musicBtn=document.getElementById('musicBtn');
+const bgm=document.getElementById('bgm');
+musicBtn.addEventListener('click', ()=>{
+  if(bgm.paused){ bgm.play(); musicBtn.classList.add('rotate'); }
+  else{ bgm.pause(); musicBtn.classList.remove('rotate'); }
+});
+document.body.addEventListener('click',()=>{ try{bgm.play();}catch(e){}},{once:true});
+
+/* 倒计时 */
 function updateCountdown(){
-    const target=new Date('2025-12-27T17:30:00+08:00');
-    const now=new Date();
-    const diff=target-now;
-    if(diff<=0){ document.getElementById('countdown').innerText="典礼已经开始！"; return; }
-    const d=Math.floor(diff/(1000*60*60*24));
-    const h=Math.floor(diff/(1000*60*60)%24);
-    const m=Math.floor(diff/(1000*60)%60);
-    const s=Math.floor(diff/1000%60);
-    document.getElementById('countdown').innerText=`${d}天 ${h}小时 ${m}分 ${s}秒`;
+  const target=new Date('2025-12-27T17:30:00+08:00');
+  const now=new Date();
+  const diff=target-now;
+  const el=document.getElementById('countdown');
+  if(diff<=0){ el.innerText="🎉 典礼已经开始！"; el.style.color="#d9534f"; el.style.fontWeight="700"; return; }
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor(diff/(1000*60*60)%24);
+  const m=Math.floor(diff/(1000*60)%60);
+  const s=Math.floor(diff/1000%60);
+  el.innerText=`${d}天 ${h}小时 ${m}分 ${s}秒`;
 }
 setInterval(updateCountdown,1000);
 updateCountdown();
 
-function copyAddress(){ navigator.clipboard.writeText("珠海湾壹号·粤菜 城市阳台店\n广东省珠海市香洲区情侣中路73号"); alert("地址已复制"); }
+/* 复制地址 */
+function copyAddress(){
+  const text="珠海湾壹号·粤菜（城市阳台店）\n广东省珠海市香洲区情侣中路73号 城市阳台一楼111–112、208–209号";
+  navigator.clipboard.writeText(text).then(()=>alert('已复制地址'),()=>alert('复制失败'));
+}
 </script>
+
 </body>
 </html>
