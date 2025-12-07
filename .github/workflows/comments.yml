@@ -19,7 +19,7 @@ jobs:
 
       - name: Handle Blessing
         env:
-          GITHUB_TOKEN: ${{ secrets.Wedding_comment }}
+          GITHUB_TOKEN: ${{ secrets.WEDDING_COMMENT }}
           ISSUE_NUMBER: 1
         run: |
           node scripts/handleBlessing.js
