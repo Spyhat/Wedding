@@ -6,39 +6,24 @@
 <title>王梓 & 汪秋益 · 婚礼邀请函</title>
 <style>
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     font-family: "PingFang SC", "Microsoft YaHei", serif;
-    background: #fdfbf7;
-    color: #3a2f2f;
-    overflow-x: hidden;
-    font-size: 1rem;
+    background: #fdfbf7; color: #3a2f2f; overflow-x: hidden; font-size: 1rem;
 }
 body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
+    content: ""; position: fixed; top: 0; left: 0;
     width: 100%; height: 100%;
     background-image: url('ink-bg.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    opacity: 0.22;
-    z-index: -1;
+    background-size: cover; background-attachment: fixed;
+    background-position: center; opacity: 0.22; z-index: -1;
     animation: floating 18s ease-in-out infinite alternate;
 }
 @keyframes floating {0% { transform: scale(1); } 100% { transform: scale(1.06); }}
 
 .scroll-wrapper {
-    width: 92%;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.78);
-    padding: 40px 25px;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    margin-top: 35px;
-    margin-bottom: 35px;
-    backdrop-filter: blur(8px);
+    width: 92%; margin: 35px auto; padding: 40px 25px;
+    background: rgba(255,255,255,0.78); border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12); backdrop-filter: blur(8px);
 }
 .title { font-size: 3rem; text-align: center; margin-bottom: 30px; color: #6a4b32; letter-spacing: 3px; font-family: "Songti SC", serif; }
 .subtitle { font-size: 1.8rem; text-align: center; color: #8a7667; margin-bottom: 22px; font-family: "Songti SC", serif; }
@@ -50,9 +35,7 @@ body::before {
 @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .map-box { width: 100%; padding: 22px; border: 1px solid #c8b5a6; border-radius: 10px; background: #fff7ef; font-size: 1.5rem; margin-top: 10px; }
 .copy-btn { margin-top: 12px; background: #b08a63; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-size: 1.35rem; cursor: pointer; }
-.input-field { width: calc(60% - 10px); font-size: 1.5rem; padding: 8px; margin-bottom: 8px; margin-right: 10px; }
-.input-name { width: calc(25% - 10px); font-size: 1.5rem; padding: 8px; margin-bottom: 8px; margin-right: 10px; }
-.input-code { width: calc(15% - 10px); font-size: 1.5rem; padding: 8px; margin-bottom: 8px; }
+.input-field, .input-name, .input-code { padding: 8px; margin-bottom: 8px; margin-right: 10px; font-size: 1.5rem; }
 .send-btn { font-size: 1.5rem; padding: 10px 20px; margin-top: 10px; background: #b08a63; color: white; border: none; border-radius: 6px; cursor: pointer; }
 .delete-btn { margin-left:10px; color:red; cursor:pointer; font-weight:bold; font-size:1.2rem; }
 </style>
@@ -76,29 +59,19 @@ body::before {
     <p class="caption">前世漫漫风尘路，今生人海再相逢。<br>两颗心在时光的缝隙里再次重逢，像是命运书页上早已写下的一笔。</p>
 </div>
 
-<!-- 十张照片 -->
+<!-- 我们的故事 -->
 <div class="scroll-wrapper">
     <div class="section-title">我们的故事</div>
-    <img src="pic_small/Fig1.jpg" class="photo" />
-    <div class="caption">① 若前世真有渡口，那么我们一定在那儿失散过一次。</div>
-    <img src="pic_small/Fig2.jpg" class="photo" />
-    <div class="caption">② 你一回头，便把千年的风都带暖了。</div>
-    <img src="pic_small/Fig3.jpg" class="photo" />
-    <div class="caption">③ 缘分不是找到谁，而是无论前世今生，总能再遇见你。</div>
-    <img src="pic_small/Fig4.jpg" class="photo" />
-    <div class="caption">④ 山河远阔，人间烟火。不及你眉眼半分。</div>
-    <img src="pic_small/Fig5.jpg" class="photo" />
-    <div class="caption">⑤ 那天阳光很好，我们刚好相爱。</div>
-    <img src="pic_small/Fig6.jpg" class="photo" />
-    <div class="caption">⑥ 跨越时空的拥抱，也敌不过你一句“到我身边来”。</div>
-    <img src="pic_small/Fig7.jpg" class="photo" />
-    <div class="caption">⑦ 爱是风，吹散前尘；爱是雨，落在今生。</div>
-    <img src="pic_small/Fig8.jpg" class="photo" />
-    <div class="caption">⑧ 如果命运有纹路，你是我最浓的一笔。</div>
-    <img src="pic_small/Fig9.jpg" class="photo" />
-    <div class="caption">⑨ 从古装的时空到现代的婚纱，我们追上了彼此。</div>
-    <img src="pic_small/Fig10.jpg" class="photo" />
-    <div class="caption">⑩ 愿此一生，春秋与共，风雨同渡。</div>
+    <img src="pic_small/Fig1.jpg" class="photo" /><div class="caption">① 若前世真有渡口，那么我们一定在那儿失散过一次。</div>
+    <img src="pic_small/Fig2.jpg" class="photo" /><div class="caption">② 你一回头，便把千年的风都带暖了。</div>
+    <img src="pic_small/Fig3.jpg" class="photo" /><div class="caption">③ 缘分不是找到谁，而是无论前世今生，总能再遇见你。</div>
+    <img src="pic_small/Fig4.jpg" class="photo" /><div class="caption">④ 山河远阔，人间烟火。不及你眉眼半分。</div>
+    <img src="pic_small/Fig5.jpg" class="photo" /><div class="caption">⑤ 那天阳光很好，我们刚好相爱。</div>
+    <img src="pic_small/Fig6.jpg" class="photo" /><div class="caption">⑥ 跨越时空的拥抱，也敌不过你一句“到我身边来”。</div>
+    <img src="pic_small/Fig7.jpg" class="photo" /><div class="caption">⑦ 爱是风，吹散前尘；爱是雨，落在今生。</div>
+    <img src="pic_small/Fig8.jpg" class="photo" /><div class="caption">⑧ 如果命运有纹路，你是我最浓的一笔。</div>
+    <img src="pic_small/Fig9.jpg" class="photo" /><div class="caption">⑨ 从古装的时空到现代的婚纱，我们追上了彼此。</div>
+    <img src="pic_small/Fig10.jpg" class="photo" /><div class="caption">⑩ 愿此一生，春秋与共，风雨同渡。</div>
 </div>
 
 <!-- 地图 -->
@@ -119,7 +92,7 @@ body::before {
     <div class="subtitle" id="countdown">计算中...</div>
 </div>
 
-<!-- 宾客祝福 -->
+<!-- 宾客祝福（静态本地） -->
 <div class="scroll-wrapper">
     <div class="section-title">宾客祝福</div>
     <p class="caption">您的到来，是我们婚礼最温柔的注脚。</p>
@@ -133,23 +106,21 @@ body::before {
 </div>
 
 <script>
+// 页面初始滚动到顶部
 window.onload = function() { window.scrollTo(0,0); };
 
 /* 音乐控制 */
 const musicBtn = document.getElementById("musicBtn");
 const bgm = document.getElementById("bgm");
-musicBtn.onclick = function() {
-    if(bgm.paused){ bgm.play(); musicBtn.classList.add("rotate"); }
-    else { bgm.pause(); musicBtn.classList.remove("rotate"); }
-};
+musicBtn.onclick=function(){ if(bgm.paused){ bgm.play(); musicBtn.classList.add("rotate"); } else { bgm.pause(); musicBtn.classList.remove("rotate"); } };
 document.body.addEventListener('touchstart',()=>bgm.play(),{once:true});
 document.body.addEventListener('click',()=>bgm.play(),{once:true});
 
 /* 倒计时 */
-function updateCountdown() {
-    const target = new Date('2025-12-27T17:30:00+08:00');
-    const now = new Date();
-    const diff = target - now;
+function updateCountdown(){
+    const target=new Date('2025-12-27T17:30:00+08:00');
+    const now=new Date();
+    const diff=target-now;
     if(diff<=0){ document.getElementById('countdown').innerText="典礼已经开始！"; return; }
     const d=Math.floor(diff/(1000*60*60*24));
     const h=Math.floor(diff/(1000*60*60)%24);
@@ -161,19 +132,13 @@ setInterval(updateCountdown,1000);
 updateCountdown();
 
 /* 复制地址 */
-function copyAddress() {
-    navigator.clipboard.writeText("珠海湾壹号·粤菜 城市阳台店\n广东省珠海市香洲区情侣中路73号");
-    alert("地址已复制");
-}
+function copyAddress(){ navigator.clipboard.writeText("珠海湾壹号·粤菜 城市阳台店\n广东省珠海市香洲区情侣中路73号"); alert("地址已复制"); }
 
-/* 留言与管理员删除逻辑 */
-const colors = ['rgba(240,230,210,0.5)','rgba(210,240,230,0.5)','rgba(230,210,240,0.5)','rgba(240,220,210,0.5)'];
-let colorIndex = 0;
-
-// 示例邀请码
-const validCodes = [];
-for(let i=1;i<=100;i++){ validCodes.push(`wang&wang20251227_${String(i).padStart(3,'0')}`);}
-const adminCode = 'wang&wang20251227_admin'; // 管理员码
+/* 宾客祝福（静态） */
+const colors=['rgba(240,230,210,0.5)','rgba(210,240,230,0.5)','rgba(230,210,240,0.5)','rgba(240,220,210,0.5)'];
+let colorIndex=0;
+const validCodes=[]; for(let i=1;i<=100;i++){ validCodes.push(`wang&wang20251227_${String(i).padStart(3,'0')}`);}
+const adminCode='wang&wang20251227_admin';
 
 function submitBlessing(){
     const msg=document.getElementById('guestMessage').value.trim();
@@ -189,9 +154,8 @@ function submitBlessing(){
     div.style.borderRadius='8px';
     div.style.fontSize='1.5rem';
     div.innerHTML=`${msg}<br>—— ${name||'匿名'}`;
-    
+
     if(code===adminCode){
-        // 显示删除按钮
         const delBtn=document.createElement('span');
         delBtn.className='delete-btn';
         delBtn.innerText='×';
@@ -203,7 +167,6 @@ function submitBlessing(){
     document.getElementById('guestMessage').value='';
     document.getElementById('guestName').value='';
     document.getElementById('guestCode').value='';
-
     colorIndex=(colorIndex+1)%colors.length;
 }
 </script>
