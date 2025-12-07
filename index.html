@@ -14,6 +14,7 @@
         background: #fdfbf7;
         color: #3a2f2f;
         overflow-x: hidden;
+        font-size: 1rem; /* 保持基础字体，避免功能失效 */
     }
 
     body::before {
@@ -49,54 +50,54 @@
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 3rem; /* 放大 1.5 倍 */
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         color: #6a4b32;
         letter-spacing: 3px;
         font-family: "Songti SC", serif;
     }
 
     .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.8rem; /* 放大 1.5 倍 */
         text-align: center;
         color: #8a7667;
-        margin-bottom: 15px;
+        margin-bottom: 22px;
         font-family: "Songti SC", serif;
     }
 
     .section-title {
-        font-size: 1.6rem;
-        margin: 25px 0 15px 0;
+        font-size: 2.4rem; /* 放大 1.5 倍 */
+        margin: 38px 0 22px 0;
         font-weight: bold;
         color: #6d4328;
         font-family: "Songti SC", serif;
-        border-left: 4px solid #c7a27c;
-        padding-left: 10px;
+        border-left: 6px solid #c7a27c;
+        padding-left: 15px;
     }
 
     .photo {
         width: 100%;
         border-radius: 10px;
-        margin-top: 15px;
+        margin-top: 22px;
         box-shadow: 0 6px 12px rgba(0,0,0,0.18);
     }
 
     .caption {
-        margin-top: 8px;
+        margin-top: 12px;
         text-align: center;
         color: #5e4b3c;
-        font-size: 1rem;
+        font-size: 1.5rem; /* 放大 1.5 倍 */
         font-family: "Songti SC", serif;
-        line-height: 1.6;
+        line-height: 2.4rem;
     }
 
     .music-btn {
         position: fixed;
         top: 20px;
         right: 20px;
-        width: 50px;
-        height: 50px;
+        width: 75px; /* 放大 1.5 倍 */
+        height: 75px;
         background: rgba(255,255,255,0.85);
         border-radius: 50%;
         box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -104,7 +105,7 @@
         justify-content: center;
         align-items: center;
         z-index: 999;
-        font-size: 20px;
+        font-size: 30px; /* 放大 1.5 倍 */
         cursor: pointer;
     }
 
@@ -118,20 +119,21 @@
 
     .map-box {
         width: 100%;
-        padding: 15px;
+        padding: 22px; /* 放大 1.5 倍 */
         border: 1px solid #c8b5a6;
         border-radius: 10px;
         background: #fff7ef;
+        font-size: 1.5rem; /* 放大 1.5 倍 */
     }
 
     .copy-btn {
-        margin-top: 8px;
+        margin-top: 12px;
         background: #b08a63;
         color: white;
-        padding: 6px 14px;
+        padding: 10px 20px; /* 放大 1.5 倍 */
         border: none;
         border-radius: 6px;
-        font-size: 0.9rem;
+        font-size: 1.35rem; /* 放大 1.5 倍 */
         cursor: pointer;
     }
 </style>
@@ -162,7 +164,7 @@
 <div class="scroll-wrapper">
     <div class="section-title">缘起</div>
     <p class="caption">
-        前世漫漫风尘路，今生人海再相逢。  
+        前世漫漫风尘路，今生人海再相逢。  <br>
         两颗心在时光的缝隙里再次重逢，像是命运书页上早已写下的一笔。
     </p>
 </div>
@@ -211,8 +213,8 @@
 <div class="scroll-wrapper">
     <div class="section-title">誓词</div>
     <p class="caption">
-        在往后的日子里，我们将彼此守望、彼此成全。  
-        不问风雨几度，不问岁月几重。  
+        在往后的日子里，我们将彼此守望、彼此成全。  <br>
+        不问风雨几度，不问岁月几重。  <br>
         愿以后的故事里，我们都在。
     </p>
 </div>
@@ -228,7 +230,7 @@
 
     <div class="map-box">
         <a href="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜"
-            style="color:#6a4b32; font-size:1.1rem;" target="_blank">
+            style="color:#6a4b32; font-size:1.65rem;" target="_blank">
             👉 点击一键使用高德地图导航
         </a>
     </div>
@@ -261,11 +263,9 @@ musicBtn.onclick = function () {
     }
 };
 
-/* 微信兼容：首次触摸或点击后播放 */
 document.body.addEventListener('touchstart', () => bgm.play(), { once: true });
 document.body.addEventListener('click', () => bgm.play(), { once: true });
 
-/* 倒计时 */
 function updateCountdown() {
     const target = new Date('2025-12-27T17:30:00+08:00');
     const now = new Date();
@@ -286,7 +286,6 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-/* 复制地址 */
 function copyAddress() {
     const text = "珠海湾壹号·粤菜 城市阳台店\n广东省珠海市香洲区情侣中路73号";
     navigator.clipboard.writeText(text);
