@@ -14,7 +14,7 @@
         background: #fdfbf7;
         color: #3a2f2f;
         overflow-x: hidden;
-        font-size: 1rem; /* 保持基础字体，避免功能失效 */
+        font-size: 1rem;
     }
 
     body::before {
@@ -49,108 +49,27 @@
         backdrop-filter: blur(8px);
     }
 
-    .title {
-        font-size: 3rem; /* 放大 1.5 倍 */
-        text-align: center;
-        margin-bottom: 30px;
-        color: #6a4b32;
-        letter-spacing: 3px;
-        font-family: "Songti SC", serif;
-    }
-
-    .subtitle {
-        font-size: 1.8rem; /* 放大 1.5 倍 */
-        text-align: center;
-        color: #8a7667;
-        margin-bottom: 22px;
-        font-family: "Songti SC", serif;
-    }
-
-    .section-title {
-        font-size: 2.4rem; /* 放大 1.5 倍 */
-        margin: 38px 0 22px 0;
-        font-weight: bold;
-        color: #6d4328;
-        font-family: "Songti SC", serif;
-        border-left: 6px solid #c7a27c;
-        padding-left: 15px;
-    }
-
-    .photo {
-        width: 100%;
-        border-radius: 10px;
-        margin-top: 22px;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.18);
-    }
-
-    .caption {
-        margin-top: 12px;
-        text-align: center;
-        color: #5e4b3c;
-        font-size: 1.5rem; /* 放大 1.5 倍 */
-        font-family: "Songti SC", serif;
-        line-height: 2.4rem;
-    }
-
-    .music-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 75px; /* 放大 1.5 倍 */
-        height: 75px;
-        background: rgba(255,255,255,0.85);
-        border-radius: 50%;
-        box-shadow: 0 0 10px rgba(0,0,0,0.25);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-        font-size: 30px; /* 放大 1.5 倍 */
-        cursor: pointer;
-    }
-
-    .rotate {
-        animation: spin 4s linear infinite;
-    }
-    @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .map-box {
-        width: 100%;
-        padding: 22px; /* 放大 1.5 倍 */
-        border: 1px solid #c8b5a6;
-        border-radius: 10px;
-        background: #fff7ef;
-        font-size: 1.5rem; /* 放大 1.5 倍 */
-    }
-
-    .copy-btn {
-        margin-top: 12px;
-        background: #b08a63;
-        color: white;
-        padding: 10px 20px; /* 放大 1.5 倍 */
-        border: none;
-        border-radius: 6px;
-        font-size: 1.35rem; /* 放大 1.5 倍 */
-        cursor: pointer;
-    }
+    .title { font-size: 3rem; text-align: center; margin-bottom: 30px; color: #6a4b32; letter-spacing: 3px; font-family: "Songti SC", serif; }
+    .subtitle { font-size: 1.8rem; text-align: center; color: #8a7667; margin-bottom: 22px; font-family: "Songti SC", serif; }
+    .section-title { font-size: 2.4rem; margin: 38px 0 22px 0; font-weight: bold; color: #6d4328; font-family: "Songti SC", serif; border-left: 6px solid #c7a27c; padding-left: 15px; }
+    .photo { width: 100%; border-radius: 10px; margin-top: 22px; box-shadow: 0 6px 12px rgba(0,0,0,0.18); }
+    .caption { margin-top: 12px; text-align: center; color: #5e4b3c; font-size: 1.5rem; font-family: "Songti SC", serif; line-height: 2.4rem; }
+    .music-btn { position: fixed; top: 20px; right: 20px; width: 75px; height: 75px; background: rgba(255,255,255,0.85); border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.25); display: flex; justify-content: center; align-items: center; z-index: 999; font-size: 30px; cursor: pointer; }
+    .rotate { animation: spin 4s linear infinite; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .map-box { width: 100%; padding: 22px; border: 1px solid #c8b5a6; border-radius: 10px; background: #fff7ef; font-size: 1.5rem; margin-top: 10px; }
+    .copy-btn { margin-top: 12px; background: #b08a63; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-size: 1.35rem; cursor: pointer; }
+    .input-field { width: calc(60% - 10px); font-size: 1.5rem; padding: 8px; margin-bottom: 8px; margin-right: 10px; }
+    .input-name { width: calc(25% - 10px); font-size: 1.5rem; padding: 8px; margin-bottom: 8px; margin-right: 10px; }
+    .input-code { width: calc(15% - 10px); font-size: 1.5rem; padding: 8px; margin-bottom: 8px; }
+    .send-btn { font-size: 1.5rem; padding: 10px 20px; margin-top: 10px; background: #b08a63; color: white; border: none; border-radius: 6px; cursor: pointer; }
 </style>
 </head>
 
 <body>
 
-<!-- 背景音乐 -->
 <div id="musicBtn" class="music-btn rotate">♪</div>
-<audio id="bgm"
-    src="music.mp3"
-    autoplay
-    loop
-    preload="auto"
-    playsinline
-    style="display:none;">
-</audio>
+<audio id="bgm" src="music.mp3" autoplay loop preload="auto" playsinline style="display:none;"></audio>
 
 <!-- 首页 -->
 <div class="scroll-wrapper">
@@ -163,15 +82,7 @@
 <!-- 缘起 -->
 <div class="scroll-wrapper">
     <div class="section-title">缘起</div>
-    <p class="caption">
-        前世漫漫风尘路，今生人海再相逢。  <br>
-        两颗心在时光的缝隙里再次重逢，像是命运书页上早已写下的一笔。
-    </p>
-</div>
-
-<!-- 今生 -->
-<div class="scroll-wrapper">
-    <div class="section-title">今生</div>
+    <p class="caption">前世漫漫风尘路，今生人海再相逢。<br>两颗心在时光的缝隙里再次重逢，像是命运书页上早已写下的一笔。</p>
 </div>
 
 <!-- 十张照片 -->
@@ -209,30 +120,15 @@
     <div class="caption">⑩ 愿此一生，春秋与共，风雨同渡。</div>
 </div>
 
-<!-- 誓词 -->
-<div class="scroll-wrapper">
-    <div class="section-title">誓词</div>
-    <p class="caption">
-        在往后的日子里，我们将彼此守望、彼此成全。  <br>
-        不问风雨几度，不问岁月几重。  <br>
-        愿以后的故事里，我们都在。
-    </p>
-</div>
-
 <!-- 地图 -->
 <div class="scroll-wrapper">
     <div class="section-title">婚礼地点</div>
-
     <div class="caption">珠海湾壹号·粤菜(一线海景城市阳台店)</div>
     <div class="caption">广东省珠海市香洲区情侣中路73号 城市阳台一楼111–112、208–209号</div>
-
     <button class="copy-btn" onclick="copyAddress()">复制地址</button>
-
     <div class="map-box">
-        <a href="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜"
-            style="color:#6a4b32; font-size:1.65rem;" target="_blank">
-            👉 点击一键使用高德地图导航
-        </a>
+        <a href="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜" style="color:#6a4b32; font-size:1.65rem;" target="_blank">👉 点击一键使用高德地图导航</a>
+        <iframe src="https://uri.amap.com/marker?position=113.582035,22.25292&name=珠海湾壹号·粤菜&src=web" width="100%" height="400" frameborder="0" style="border:0; border-radius:10px; margin-top:10px;" allowfullscreen tabindex="-1" scrolling="no"></iframe>
     </div>
 </div>
 
@@ -246,13 +142,21 @@
 <div class="scroll-wrapper">
     <div class="section-title">宾客祝福</div>
     <p class="caption">感谢您的到来，是我们婚礼最温柔的注脚。</p>
+    <div style="margin-top:15px;">
+        <input type="text" id="guestMessage" class="input-field" placeholder="请输入祝福语">
+        <input type="text" id="guestName" class="input-name" placeholder="落款">
+        <input type="text" id="guestCode" class="input-code" placeholder="邀请码">
+    </div>
+    <button class="send-btn" onclick="addBlessing()">发送祝福</button>
+    <div id="blessingList" style="margin-top:20px;"></div>
 </div>
 
 <script>
+window.onload = function() { window.scrollTo(0,0); };
+
 /* 音乐播放控制 */
 const musicBtn = document.getElementById("musicBtn");
 const bgm = document.getElementById("bgm");
-
 musicBtn.onclick = function () {
     if (bgm.paused) {
         bgm.play();
@@ -262,34 +166,63 @@ musicBtn.onclick = function () {
         musicBtn.classList.remove("rotate");
     }
 };
-
 document.body.addEventListener('touchstart', () => bgm.play(), { once: true });
 document.body.addEventListener('click', () => bgm.play(), { once: true });
 
+/* 倒计时 */
 function updateCountdown() {
     const target = new Date('2025-12-27T17:30:00+08:00');
     const now = new Date();
     const diff = target - now;
-
-    if (diff <= 0) {
-        document.getElementById('countdown').innerText = "典礼已经开始！";
-        return;
-    }
-
+    if (diff <= 0) { document.getElementById('countdown').innerText = "典礼已经开始！"; return; }
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
     const h = Math.floor(diff / (1000 * 60 * 60) % 24);
     const m = Math.floor(diff / (1000 * 60) % 60);
     const s = Math.floor(diff / 1000 % 60);
-
     document.getElementById('countdown').innerText = `${d}天 ${h}小时 ${m}分 ${s}秒`;
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
+/* 复制地址 */
 function copyAddress() {
     const text = "珠海湾壹号·粤菜 城市阳台店\n广东省珠海市香洲区情侣中路73号";
     navigator.clipboard.writeText(text);
     alert("地址已复制");
+}
+
+/* 留言祝福逻辑 */
+const colors = ['rgba(240,230,210,0.5)','rgba(210,240,230,0.5)','rgba(230,210,240,0.5)','rgba(240,220,210,0.5)'];
+let colorIndex = 0;
+
+// 生成邀请码列表 001~100，可根据实际改
+const validCodes = [];
+for(let i=1;i<=100;i++){
+    const num = String(i).padStart(3,'0');
+    validCodes.push(`wang&wang20251227_${num}`);
+}
+
+function addBlessing() {
+    const message = document.getElementById('guestMessage').value.trim();
+    const name = document.getElementById('guestName').value.trim();
+    const code = document.getElementById('guestCode').value.trim();
+    if(!message) { alert('请填写祝福语'); return; }
+    if(!validCodes.includes(code)) { alert('邀请码错误或无效'); return; }
+
+    const div = document.createElement('div');
+    div.style.marginBottom = '15px';
+    div.style.padding = '10px';
+    div.style.background = colors[colorIndex];
+    div.style.borderRadius = '8px';
+    div.style.fontSize = '1.5rem';
+    div.innerHTML = `${message} <br>—— ${name || '匿名'}`;
+
+    document.getElementById('blessingList').prepend(div);
+    document.getElementById('guestMessage').value = '';
+    document.getElementById('guestName').value = '';
+    document.getElementById('guestCode').value = '';
+
+    colorIndex = (colorIndex + 1) % colors.length;
 }
 </script>
 
